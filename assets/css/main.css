@@ -1,9 +1,104 @@
 @import url("https://rsms.me/inter/inter.css");
 @import url('https://cdn.rawgit.com/dreampulse/computer-modern-web-font/master/fonts.css');
 
-html {
-  font-size: 16px;
-  font-family: "Computer Modern Serif", "Inter", sans-serif;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
 }
 
 @supports (font-variation-settings: normal) {
@@ -14,6 +109,7 @@ html {
 
 html,
 body {
+  font-family: "Inter", sans-serif;
   display: flex;
   flex-flow: column;
   padding: 0;
@@ -21,33 +117,47 @@ body {
   background: #121212;
   /* color: #fafafc; */
   color: rgba(218,223,225,1)
-  line-height: 1.2;
+  line-height: 1.4;
   width: 100%;
   height: 100%;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+}
+
 h1 {
-  font-size: 1.7rem;
+  margin-bottom: 16px;
 }
 
 h2 {
-  font-size: 1.5rem;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+h1 {
+  font-size: 1.7em;
+}
+
+h2 {
+  font-size: 1.5em;
 }
 
 h3 {
-  font-size: 1.3rem;
+  font-size: 1.3em;
 }
 
 h4 {
   font-size: 1.1em;
 }
 
-p,
-li {
-  -webkit-letter-spacing: -0.024%;
-  -moz-letter-spacing: -0.024%;
-  -ms-letter-spacing: -0.024%;
-  letter-spacing: -0.024%;
+p {
+  margin-bottom: 1em;
 }
 
 header {
@@ -81,6 +191,7 @@ header {
   white-space: nowrap;
   flex-grow: 1;
 }
+
 .grid {
   max-width: 100%;
   flex-grow: 1;
@@ -95,16 +206,21 @@ header {
   padding: 3px 15px;
   box-shadow: 0px 8px 14px rgba(0, 0, 0, 0.25);
   display: inline-block;
-  width: 625px;
-  max-width: 90%;
+  width: 100%;
+  max-width: 625px;
   height: 100% !important;
   max-height: 100%;
   overflow-y: auto;
   vertical-align: top;
   box-sizing: border-box;
 }
+
 .page:last-child {
   margin-right: 15px;
+}
+
+.content {
+  padding: 32px;
 }
 
 a {
@@ -115,22 +231,28 @@ a {
   color: rgb(38, 166, 91, 0.8);
 }
 
+a.active {
+  background-color: rgba(10, 132, 255, 0.15);
+}
+
 a:hover {
   opacity: 0.5;
 }
 
-code {
-  white-space: pre;
-  background: #eeeeee;
-  border: 1px solid #bbb;
-  border-radius: 4px;
-  display: inline-block;
-  max-width: 100%;
-  overflow: auto;
+blockquote {
+  margin-left: 1rem;
+  font-style: italic;
+  font-family: Georgia, bitstream charter, serif;
+  border-left: 3px solid;
+  border-left-color: currentcolor;
+  border-color: var(--text-color);
+  padding-left: 1em;
 }
 
 pre {
-  padding: 1px 10px;
+  overflow: auto;
+  padding: 1em;
+  margin: 1em auto;
 }
 
 img {
@@ -155,15 +277,6 @@ iframe {
 
 .tippy-box > .tippy-arrow:before {
   transform: scale(2);
-}
-
-footer {
-  background: #fff;
-  align-items: center;
-  text-align: center;
-  color: #ccc;
-  border-top: 1px #ccc solid;
-  font-size: 10px;
 }
 
 .bl-section {
@@ -191,8 +304,36 @@ footer {
   /* color: rgb(0, 113, 188, 0.8); */
 }
 
+dl {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 1em 0;
+}
+dl > * {
+  padding-top: 0.5em;
+}
+
 dt {
-  text-decoration: underline;
+  width: 30%;
+  font-weight: bold;
+  text-align: right;
+}
+dd {
+  width: 60%;
+  padding-left: 1em;
+  margin-left: 0px;
+}
+dd + dd {
+  width: 100%;
+  padding-left: calc(30% + 1em);
+}
+dt + dt {
+  padding-right: 60%;
+}
+dt + dt + dd {
+  margin-top: -1.625em; /* own height including padding */
+  padding-left: calc(30% + 1em);
 }
 
 
