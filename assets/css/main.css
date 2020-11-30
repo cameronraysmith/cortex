@@ -103,7 +103,7 @@ section {
 
 @supports (font-variation-settings: normal) {
   html {
-    font-family: "Computer Modern Serif", "Inter", sans-serif;
+    font-family: "Computer Modern Sans", "Inter", sans-serif;
   }
 }
 
