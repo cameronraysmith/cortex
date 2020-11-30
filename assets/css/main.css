@@ -109,7 +109,7 @@ section {
 
 html,
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "Computer Modern Sans", "Inter", sans-serif;
   display: flex;
   flex-flow: column;
   padding: 0;
